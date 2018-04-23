@@ -6,25 +6,23 @@ namespace BinaryTreeTraversals
 {
     public class PreOrderTreeTraversal : ITreeTraversal
     {
-        public void Traverse(BinaryTreeNode root)
+        public void Traverse(BinaryTreeNode root, Action<int> processNode)
         {
             if (root == null)
             {
                 return;
             }
 
-            Console.WriteLine(root.Data);
-            Traverse(root.Left);
-            Traverse(root.Right);
+            processNode(root.Data);
+            Traverse(root.Left, processNode);
+            Traverse(root.Right, processNode);
         }
 
-        public List<int> TraverseNonRecursive(BinaryTreeNode root)
+        public void TraverseNonRecursive(BinaryTreeNode root, Action<int> processNode)
         {
-            var result = new List<int>();
-
             if (root == null)
             {
-                return result;
+                return;
             }
 
             var stack = new Stack<BinaryTreeNode>();
@@ -33,7 +31,7 @@ namespace BinaryTreeTraversals
             while (stack.Count > 0)
             {
                 BinaryTreeNode node = stack.Pop();
-                result.Add(node.Data);
+                processNode(node.Data);
 
                 if (node.Right != null)
                 {
@@ -45,8 +43,6 @@ namespace BinaryTreeTraversals
                     stack.Push(node.Left);
                 }
             }
-
-            return result;
         }
     }
 }

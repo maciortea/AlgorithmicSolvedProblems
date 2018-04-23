@@ -26,19 +26,21 @@ namespace BinaryTreeTraversals
             var traversals = new Dictionary<string, ITreeTraversal>
             {
                 { "Pre-order traversal", new PreOrderTreeTraversal() },
-                { "In-order traversal", new InOrderTreeTraversal() }
+                { "In-order traversal", new InOrderTreeTraversal() },
+                { "Post-order traversal", new PostOrderTreeTraversal() }
             };
+
+            Action<int> processNode = (n) => Console.Write(n + " ");
 
             foreach (var traversal in traversals)
             {
                 Console.WriteLine($"{traversal.Key} recursive");
-                traversal.Value.Traverse(bt.Root);
+                traversal.Value.Traverse(bt.Root, processNode);
+                Console.WriteLine();
 
                 Console.WriteLine($"{traversal.Key} non-recursive");
-                foreach (var elem in traversal.Value.TraverseNonRecursive(bt.Root))
-                {
-                    Console.WriteLine(elem);
-                }
+                traversal.Value.TraverseNonRecursive(bt.Root, processNode);
+                Console.WriteLine();
             }
 
             Console.ReadLine();
