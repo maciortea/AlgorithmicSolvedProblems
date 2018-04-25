@@ -93,7 +93,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZeroOneNumbers", "src\ZeroO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntersectionOfTwoArrays", "src\IntersectionOfTwoArrays\IntersectionOfTwoArrays.csproj", "{82C0C075-6830-4821-8BBE-65D8E64358A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimePlanner", "src\TimePlanner\TimePlanner.csproj", "{6E622073-D9FC-4B4E-BB8F-2FF719285C8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimePlanner", "src\TimePlanner\TimePlanner.csproj", "{6E622073-D9FC-4B4E-BB8F-2FF719285C8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTreeDepth", "src\BinaryTreeDepth\BinaryTreeDepth.csproj", "{06729194-57BE-41D8-9E5E-C79A1CEC2F01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -281,6 +283,10 @@ Global
 		{6E622073-D9FC-4B4E-BB8F-2FF719285C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E622073-D9FC-4B4E-BB8F-2FF719285C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E622073-D9FC-4B4E-BB8F-2FF719285C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06729194-57BE-41D8-9E5E-C79A1CEC2F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06729194-57BE-41D8-9E5E-C79A1CEC2F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06729194-57BE-41D8-9E5E-C79A1CEC2F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06729194-57BE-41D8-9E5E-C79A1CEC2F01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -331,6 +337,7 @@ Global
 		{04F72CF7-D1B4-465C-BFB4-111C25040112} = {C361EC4D-2437-4B2E-B20A-9DDEAACFC6A5}
 		{82C0C075-6830-4821-8BBE-65D8E64358A6} = {C361EC4D-2437-4B2E-B20A-9DDEAACFC6A5}
 		{6E622073-D9FC-4B4E-BB8F-2FF719285C8C} = {C361EC4D-2437-4B2E-B20A-9DDEAACFC6A5}
+		{06729194-57BE-41D8-9E5E-C79A1CEC2F01} = {C361EC4D-2437-4B2E-B20A-9DDEAACFC6A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A1753553-CE67-4DE6-A759-A57A34C5F2F8}
