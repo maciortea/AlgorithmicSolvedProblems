@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Xunit;
 
 namespace MinSalesPath
@@ -11,7 +10,7 @@ namespace MinSalesPath
             var root = CreateSampleTree();
 
             var solution = new MinSalesPathSolution();
-            int minCost = solution.GetCheapestCost(root);
+            int minCost = solution.GetCheapestCostRecursive(root);
 
             Assert.Equal(4, minCost);
         }
@@ -22,7 +21,7 @@ namespace MinSalesPath
             var root = CreateSampleTree();
 
             var solution = new MinSalesPathSolution();
-            int minCost = solution.GetCheapestCostIteratively(root);
+            int minCost = solution.GetCheapestCostIterative(root);
 
             Assert.Equal(4, minCost);
         }
@@ -30,10 +29,10 @@ namespace MinSalesPath
         [Fact]
         public void GetCheapestCostForRootOnlyTreeTest()
         {
-            var root = new Node(2);
+            var root = new SalesNode(2);
 
             var solution = new MinSalesPathSolution();
-            int minCost = solution.GetCheapestCost(root);
+            int minCost = solution.GetCheapestCostRecursive(root);
 
             Assert.Equal(2, minCost);
         }
@@ -41,31 +40,33 @@ namespace MinSalesPath
         [Fact]
         public void GetCheapestCostIterativelyForRootOnlyTreeTest()
         {
-            var root = new Node(2);
+            var root = new SalesNode(2);
 
             var solution = new MinSalesPathSolution();
-            int minCost = solution.GetCheapestCostIteratively(root);
+            int minCost = solution.GetCheapestCostIterative(root);
 
             Assert.Equal(2, minCost);
         }
 
-        private Node CreateSampleTree()
+        private SalesNode CreateSampleTree()
         {
-            var root = new Node(0);
+            var root = new SalesNode(0);
 
-            var child1 = new Node(5, root);
-            var childrenOfChild1 = new List<Node> { new Node(2, child1), new Node(1, child1) };
-            child1.AddChildren(childrenOfChild1);
+            var child1 = new SalesNode(5);
+            child1.Children.Add(new SalesNode(2));
+            child1.Children.Add(new SalesNode(1));
 
-            var child2 = new Node(3, root);
-            var childrenOfChild2 = new List<Node> { new Node(2, child2), new Node(1, child2) };
-            child2.AddChildren(childrenOfChild2);
+            var child2 = new SalesNode(3);
+            child2.Children.Add(new SalesNode(2));
+            child2.Children.Add(new SalesNode(1));
 
-            var child3 = new Node(6, root);
-            var childrenOfChild3 = new List<Node> { new Node(1, child3), new Node(5, child3) };
-            child3.AddChildren(childrenOfChild3);
+            var child3 = new SalesNode(6);
+            child3.Children.Add(new SalesNode(1));
+            child3.Children.Add(new SalesNode(5));
 
-            root.AddChildren(new List<Node> { child1, child2, child3 });
+            root.Children.Add(child1);
+            root.Children.Add(child2);
+            root.Children.Add(child3);
 
             return root;
         }

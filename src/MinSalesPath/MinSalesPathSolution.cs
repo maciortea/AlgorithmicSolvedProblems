@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MinSalesPath
 {
     public class MinSalesPathSolution
     {
-        public int GetCheapestCost(Node root)
+        public int GetCheapestCostRecursive(SalesNode root)
         {
             if (root.Children.Count <= 0)
             {
@@ -15,7 +15,7 @@ namespace MinSalesPath
             int minCost = int.MaxValue;
             foreach (var child in root.Children)
             {
-                int tempCost = GetCheapestCost(child);
+                int tempCost = GetCheapestCostRecursive(child);
                 if (tempCost < minCost)
                 {
                     minCost = tempCost;
@@ -25,40 +25,40 @@ namespace MinSalesPath
             return root.Cost + minCost;
         }
 
-        public int GetCheapestCostIteratively(Node root)
+        public int GetCheapestCostIterative(SalesNode root)
         {
-            var costs = new List<int>();
-            var stack = new Stack<Node>();
-            stack.Push(root);
+            if (root.Children.Count <= 0)
+            {
+                return root.Cost;
+            }
 
-            int sum = 0;
+            // We are going to save the node and the cost so far
+            var stack = new Stack<KeyValuePair<SalesNode, int>>();
+            stack.Push(KeyValuePair.Create(root, root.Cost));
+
+            int cheapestCost = int.MaxValue;
             while (stack.Count > 0)
             {
-                var node = stack.Pop();
-                if (node.Parent == null)
-                {
-                    sum += node.Cost;
-                }
-                else
-                {
-                    sum += node.Cost + node.Parent.Cost;
-                }
+                KeyValuePair<SalesNode, int> nodeParentCostPair = stack.Pop();
+                int costToParent = nodeParentCostPair.Value;
+                int currentNodeCost = nodeParentCostPair.Key.Cost;
+                int currentCost = costToParent + currentNodeCost;
 
-                if (node.Children.Count <= 0)
+                if (nodeParentCostPair.Key.Children.Count <= 0)
                 {
-                    costs.Add(sum);
-                    sum = 0;
+                    cheapestCost = Math.Min(cheapestCost, currentCost);
                 }
                 else
                 {
-                    for (int i = node.Children.Count - 1; i >= 0; i--)
+                    foreach (SalesNode child in nodeParentCostPair.Key.Children)
                     {
-                        stack.Push(node.Children[i]);
+                        // Push to stack current children and the cost so far
+                        stack.Push(KeyValuePair.Create(child, currentCost));
                     }
                 }
             }
 
-            return costs.Min();
+            return cheapestCost;
         }
     }
 }
