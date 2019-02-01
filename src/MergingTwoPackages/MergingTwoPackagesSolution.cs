@@ -2,7 +2,7 @@
 
 namespace MergingTwoPackages
 {
-    // Given a package with a weight limit limit and an array arr of item weights,
+    // Given a package with a weight limit and an array arr of item weights,
     // implement a function getIndicesOfItemWeights that finds two items whose sum of
     // weights equals the weight limit limit.
     // Your function should return a pair[i, j] of the indices of the item weights, ordered such that i > j.
