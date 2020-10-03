@@ -1,6 +1,8 @@
-﻿namespace Quicksort
+﻿using Helpers;
+
+namespace SortAlgorithms
 {
-    public class Quicksort
+    public class QuickSort : ISort
     {
         public void Sort(int[] arr)
         {
@@ -37,20 +39,13 @@
 
                 if (left <= right)
                 {
-                    Swap(arr, left, right);
+                    ArrayUtils.Swap(arr, left, right);
                     left++;
                     right--;
                 }
             }
 
             return left;
-        }
-
-        private void Swap(int[] arr, int left, int right)
-        {
-            int temp = arr[left];
-            arr[left] = arr[right];
-            arr[right] = temp;
         }
     }
 }
