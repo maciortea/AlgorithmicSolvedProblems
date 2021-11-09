@@ -127,7 +127,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Helpers", "src\Sortings\Hel
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortAlgorithms", "src\Sortings\SortAlgorithms\SortAlgorithms.csproj", "{6DE40795-3AC2-4E31-A9C4-955004643868}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxSumInArray", "src\MaxSumInArray\MaxSumInArray.csproj", "{12C2B837-09DF-44EA-A1CC-03335543AFD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxSumInArray", "src\MaxSumInArray\MaxSumInArray.csproj", "{12C2B837-09DF-44EA-A1CC-03335543AFD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueRemovals", "src\QueueRemovals\QueueRemovals.csproj", "{CD2F1E38-79C9-466D-A888-46C1079ED785}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -379,6 +381,10 @@ Global
 		{12C2B837-09DF-44EA-A1CC-03335543AFD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12C2B837-09DF-44EA-A1CC-03335543AFD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12C2B837-09DF-44EA-A1CC-03335543AFD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD2F1E38-79C9-466D-A888-46C1079ED785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD2F1E38-79C9-466D-A888-46C1079ED785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD2F1E38-79C9-466D-A888-46C1079ED785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD2F1E38-79C9-466D-A888-46C1079ED785}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -446,6 +452,7 @@ Global
 		{F24DF6AD-E543-4546-BD0D-CE0BC4CA42AC} = {823B9618-952E-44F2-82A7-4D1CED78D461}
 		{6DE40795-3AC2-4E31-A9C4-955004643868} = {823B9618-952E-44F2-82A7-4D1CED78D461}
 		{12C2B837-09DF-44EA-A1CC-03335543AFD4} = {C361EC4D-2437-4B2E-B20A-9DDEAACFC6A5}
+		{CD2F1E38-79C9-466D-A888-46C1079ED785} = {C361EC4D-2437-4B2E-B20A-9DDEAACFC6A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A1753553-CE67-4DE6-A759-A57A34C5F2F8}
